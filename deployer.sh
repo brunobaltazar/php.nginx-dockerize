@@ -1,5 +1,5 @@
 #!/bin/sh -ex
-
+export PATH=$PATH:/usr/bin/ > /dev/null 2>&1
 echo $USER
 docker -v
 # BRANCH_TAG=$1
@@ -29,7 +29,7 @@ docker -v
 # Necessário add gera um chave publica na sua maquina e depois adicionar no servidor gitlab
 # Usuário deve ser dono da pasta vagrant ou ter permissão de leitura e escrita
 #echo "O diretório não existe iniciando a clonagem do projeto";
-   git clone -b ${BRANCH_TAG} ssh://git@git.tj.ce.gov.br/sistemas/${SISTEMA}.git /opt/vagrant/${SISTEMA}   
+#   git clone -b ${BRANCH_TAG} ssh://git@git.tj.ce.gov.br/sistemas/${SISTEMA}.git /opt/vagrant/${SISTEMA}   
 #fi
 
 #cd .. && pwd && ls -l && docker-compose up -d --build
