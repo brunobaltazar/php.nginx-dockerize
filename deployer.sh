@@ -1,18 +1,17 @@
 #!/bin/sh
 
-
 export PATH=$PATH:/usr/bin/ > /dev/null 2>&1
 
 # BRANCH_TAG=$1
 # SISTEMA=$2
 # PORT=$3
 
-# export BRANCH_TAG=$(echo $BRANCH_TAG | cut -d'/' -f 2);
-#export HOST=$(cat /etc/hostname);
+export BRANCH_TAG=$(echo $BRANCH_TAG | cut -d'/' -f 2);
+export HOST=$(cat /etc/hostname);
 
 #export BRANCH_TAG=master
 #export SISTEMA=php.nginx-dockerize
-#export PORT=8000 #"${PORT}"
+export PORT=8000
 #export APP_PATH_DEPLOY="/opt/vagrant/${SISTEMA}"
 
 #echo "-------------------------------------------------------------------------------"
@@ -35,6 +34,6 @@ export PATH=$PATH:/usr/bin/ > /dev/null 2>&1
 
 #cd .. && pwd && ls -l && docker-compose up -d --build
 
-#echo "-------------------------------------------------------------------------------"
-#echo "  PATH_DEPLOY realizado com sucesso   ${HOST}:${PORT}/index.php                "
-#echo "-------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
+echo "  PATH_DEPLOY realizado com sucesso   ${HOST}:${PORT}/index.php                "
+echo "-------------------------------------------------------------------------------"
