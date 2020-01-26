@@ -9,7 +9,7 @@
 export HOST=$(cat /etc/hostname);
 export BRANCH_TAG=master
 export SISTEMA=php.nginx-dockerize
-export PORT=8090 #"${PORT}"
+export PORT=8000 #"${PORT}"
 export APP_PATH_DEPLOY="/opt/vagrant/${SISTEMA}"
 
 echo "-------------------------------------------------------------------------------"
