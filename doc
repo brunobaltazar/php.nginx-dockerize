@@ -1,8 +1,24 @@
+criar conta no github
+criar projeto
+criar senha ssh na sua maquina e copia a chave publica para o git hub
+cat .ssh/id_rsa.pub | ssh username@nome-servidor-remoto 'cat >> .ssh/authorized_keys'
+cat .ssh/id_rsa.pub | ssh username@nome-servidor-remoto 'cat >> .ssh/authorized_keys'
+
+
 Plugins
 plugin SSH
 Git Parameter Plugin
 Active Choices
 
+
+SSH script jenkins
+git clone git@github.com:brunobaltazar/php.nginx-dockerize.git > /dev/null 2>&1 || cd ~/php.nginx-dockerize && git checkout php.nginx-dockerize_2 && git pull;
+ls -lh && pwd
+chmod +x deployer.sh; 
+sh  deployer.sh;
+
+
+Caso ocorra erro  comand not found
 sudo ln -s /snap/bin/docker /usr/bin/docker
 sudo ln -s /snap/bin/docker-compose /usr/bin/docker
 
@@ -12,13 +28,6 @@ senha = padrao
 
 docker run --rm --hostname jenkins-lts --name jenkins-lts -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
 docker exec -it jenkins-lts bash
-
-criar conta no github
-criar projeto
-criar senha ssh na sua maquina e copia a chave publica para o git hub
-
-cat .ssh/id_rsa.pub | ssh username@nome-servidor-remoto 'cat >> .ssh/authorized_keys'
-cat .ssh/id_rsa.pub | ssh username@nome-servidor-remoto 'cat >> .ssh/authorized_keys'
 
 
 Para conexoes remota usandao jenkins no conteiner 
