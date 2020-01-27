@@ -30,7 +30,8 @@ echo "O diretório não existe iniciando a clonagem do projeto";
    git clone -b ${BRANCH_TAG} ssh://git@git.tj.ce.gov.br/sistemas/${SISTEMA}.git /opt/vagrant/${SISTEMA}   
 fi
 
-cd .. && pwd && ls -l && docker-compose up -d --build
+
+cd php.nginx-dockerize && pwd && ls -l && docker-compose up -d --build
 
 echo "-------------------------------------------------------------------------------"
 echo "  PATH_DEPLOY realizado com sucesso   ${HOST}:${PORT}/index.php                "
