@@ -31,8 +31,7 @@ export PORT=8000
 #   git clone -b ${BRANCH_TAG} ssh://git@github.com:brunobaltazar/${SISTEMAS}.git /opt/vagrant/${SISTEMA}
 #fi
 
-
-#cd .. && pwd && ls -l && docker-compose up -d --build
+cd php.nginx-dockerize && pwd && ls -l && docker-compose up -d --build
 
 echo "-------------------------------------------------------------------------------"
 echo "  PATH_DEPLOY realizado com sucesso   ${HOST}:${PORT}/index.php                "
