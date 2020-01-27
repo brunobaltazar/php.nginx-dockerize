@@ -1,0 +1,95 @@
+Plugins
+plugin SSH
+Git Parameter Plugin
+Active Choices
+
+sudo ln -s /snap/bin/docker /usr/bin/docker
+sudo ln -s /snap/bin/docker-compose /usr/bin/docker
+
+
+jenkins = devops
+senha = padrao
+
+docker run --rm --hostname jenkins-lts --name jenkins-lts -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+docker exec -it jenkins-lts bash
+
+criar conta no github
+criar projeto
+criar senha ssh na sua maquina e copia a chave publica para o git hub
+
+cat .ssh/id_rsa.pub | ssh username@nome-servidor-remoto 'cat >> .ssh/authorized_keys'
+cat .ssh/id_rsa.pub | ssh username@nome-servidor-remoto 'cat >> .ssh/authorized_keys'
+
+
+Para conexoes remota usandao jenkins no conteiner 
+Copiando a Chave Pública Usando o ssh-copy-id
+ssh-copy-id nome_de_usuário@host_remoto
+
+Copiando a Chave Pública Manualmente
+
+echo string_da_chave_pública >> ~/.ssh/authorized_keys
+chmod -R go= ~/.ssh
+
+
+ 
+docker run --rm --hostname dns.mageddo --name dns-proxy-server -p 5380:5380 \
+  -v /opt/dns-proxy-server/conf:/app/conf \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /etc/resolv.conf:/etc/resolv.conf \
+  defreitas/dns-proxy-server
+
+  docker run --hostname nginx.dev.intranet nginx
+
+
+ping nginx.dev.intranet
+PING nginx.dev.intranet (172.17.0.5) 56(84) bytes of data.
+64 bytes from 172.17.0.5: icmp_seq=1 ttl=64 time=0.099 ms
+64 bytes from 172.17.0.5: icmp_seq=2 ttl=64 time=0.069 ms
+
+
+
+
+echo $USER
+GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git clone git@github.com:brunobaltazar/php.nginx-dockerize.git
+#pwd && ls -ls ;
+#cd php.nginx-dockerize && ls ;
+#cat deployer.sh
+#echo $USERNAME;
+#echo $HOSTNAME;
+#echo $SCRIPT;
+
+
+  
+#USERNAME=${USERNAME}
+#HOSTS="${HOSTNAME} #host2 #host3"
+#SCRIPT="pwd; ls"
+#for HOSTNAME in ${HOSTS} ; do
+#  ssh -o StrictHostKeyChecking=no -l ${USERNAME} ${HOSTNAME} "${SCRIPT}"
+#done
+
+
+
+devops@devops-master:~$ which docker
+/snap/bin/docker
+devops@devops-master:~$ sudo ln -s /snap/bin/docker /usr/bin/docker
+
+export PATH="$PATH:/snap/bin"
+
+
+
+echo $BRANCH_TAG
+ls && pwd
+#git clone git@github.com:brunobaltazar/php.nginx-dockerize.git > /dev/null 2>&1 || cd ~/php.nginx-dockerize  
+#git checkout php.nginx-dockerize_2 && git pull && sleep 05
+#chmod +x deployer.sh
+#ls -l;
+#./deployer.sh
+
+
+Active Choices
+
+
+def gettags = ("git ls-remote -t -h https://github.com/brunobaltazar/php.nginx-dockerize.git").execute()
+return gettags.text.readLines().collect { 
+  it.split()[1].replaceAll('refs/heads/', '').replaceAll('refs/tags/', '').replaceAll("\\^\\{\\}", '')
+}
