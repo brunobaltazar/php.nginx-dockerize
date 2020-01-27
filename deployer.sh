@@ -1,6 +1,4 @@
 #!/bin/sh
-
-#export PATH=$PATH:/usr/bin/ > /dev/null 2>&1
 # BRANCH_TAG=$1
 # SISTEMA=$2
 # PORT=$3
@@ -26,9 +24,9 @@ export HOST=$(cat /etc/hostname);
 #echo "O diretório não existe iniciando a clonagem do projeto";
 #   git clone -b ${BRANCH_TAG} ssh://git@github.com:brunobaltazar/${SISTEMAS}.git /opt/vagrant/${SISTEMA}
 #fi
- 
- ls -lha && pwd
- cd php.nginx-dockerize && pwd && ls -l && docker-compose up -d --build
+
+ls -lha && pwd
+docker-compose up -d --build
 
 echo "-------------------------------------------------------------------------------"
 echo "  PATH_DEPLOY realizado com sucesso   ${HOST}:${PORT}/index.php                "
